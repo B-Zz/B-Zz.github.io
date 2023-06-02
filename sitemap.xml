@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://blog.nothingalr8.top/</loc>
+    <lastmod>2023-06-02T15:46:58+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/categories/</loc>
+    <lastmod>2023-06-02T15:46:58+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/post/</loc>
+    <lastmod>2023-06-02T15:46:58+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/post/test/</loc>
+    <lastmod>2023-06-02T15:46:58+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/</loc>
+    <lastmod>2023-06-02T15:46:58+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/page/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/archives/</loc>
+    <lastmod>2020-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/tags/</loc>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/about/</loc>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/search/</loc>
+  </url><url>
+    <loc>http://blog.nothingalr8.top/links/</loc>
+  </url>
+</urlset>
