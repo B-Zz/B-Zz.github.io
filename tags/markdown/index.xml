@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Markdown on NothingAlr8&#39;s Blog</title>
+        <link>http://blog.nothingalr8.top/tags/markdown/</link>
+        <description>Recent content in Markdown on NothingAlr8&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Wed, 21 Sep 2022 12:05:12 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/tags/markdown/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Markdown笔记</title>
+        <link>http://blog.nothingalr8.top/post/markdown%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Wed, 21 Sep 2022 12:05:12 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/post/markdown%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h1 id=&#34;markdown概述&#34;&gt;Markdown概述&lt;/h1&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;Markdown语言是一种简单的标记语言,语法简单,排版简洁,一般为.md格式的文件,而Github等众多网站都支持Markdown的语法。&lt;/p&gt;
+&lt;h2 id=&#34;我与markdown&#34;&gt;我与Markdown&lt;/h2&gt;
+&lt;p&gt;而这个网站所采用的就是markdown语言,这也是我开始学习Markdown的原因,我也乘着自己学习Markdown之时来编辑博客的第一个学习项目——Markdown语言。&lt;/p&gt;
+&lt;h2 id=&#34;参考教程&#34;&gt;参考教程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://markdown.com.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://markdown.com.cn/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/99319314&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zhuanlan.zhihu.com/p/99319314&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/markdown/md-tutorial.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.runoob.com/markdown/md-tutorial.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;markdown语法&#34;&gt;Markdown语法&lt;/h1&gt;
+&lt;h2 id=&#34;标题&#34;&gt;标题&lt;/h2&gt;
+&lt;p&gt;Markdown中,在一行的开始添加#来表示标题(#与文本之间有一个空格),#的数量表示标题的级,级越低,字体越大,从一级标题到六级标题逐渐变小。
+也可采用在文本下加任意数量的 ==号来标识一级标题或--号来标识标题二级标题。&lt;/p&gt;
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;# 一级标题&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;一级标题-1&#34;&gt;一级标题&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;一级标题
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;=========
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;## 二级标题&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二级标题-1&#34;&gt;二级标题&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;二级标题
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--------
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;三级标题&#34;&gt;三级标题&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;### 三级标题&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;四级标题&#34;&gt;四级标题&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;#### 四级标题&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;五级标题&#34;&gt;五级标题&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;##### 五级标题&lt;/code&gt;&lt;/p&gt;
+&lt;h6 id=&#34;六级标题&#34;&gt;六级标题&lt;/h6&gt;
+&lt;p&gt;&lt;code&gt;###### 六级标题&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;换行与段落&#34;&gt;换行与段落&lt;/h2&gt;
+&lt;p&gt;Markdown中,在一行的末尾添加两个及以上的空格然后按回车即可创建一个换行,或在一行中使用&amp;lt;br&amp;gt;来换行。空白格会对文本进行分隔,来表示段落。
+注意:不要使用空格或制表符(Tab)来缩进段落。&lt;/p&gt;
+&lt;h2 id=&#34;粗体斜体下划线删除线&#34;&gt;粗体、斜体、下划线、删除线&lt;/h2&gt;
+&lt;p&gt;在文本前后各添加两个星号(**)或下划线(__)来加粗,
+在文本前后各添加一个星号(*)或下划线(_)来表示斜体。
+但在加粗一个单词或时一个单词变为斜体时,一般不使用下划线。
+在文本前后各添加两个加号(++)来给文本加下划线。
+在文本前后各添加两个波浪号(~~)来给文本加删除线。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字体效果&lt;/th&gt;
+&lt;th&gt;Markdown语法&lt;/th&gt;
+&lt;th&gt;预览效果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;斜体&lt;/td&gt;
+&lt;td&gt;*Hello*&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;Hello&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;粗体&lt;/td&gt;
+&lt;td&gt;**Hello**&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Hello&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;加下划线&lt;/td&gt;
+&lt;td&gt;++Hello++&lt;/td&gt;
+&lt;td&gt;++Hello++&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;加删除线&lt;/td&gt;
+&lt;td&gt;~~Hello~~&lt;/td&gt;
+&lt;td&gt;&lt;del&gt;Hello&lt;/del&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;引用代码&#34;&gt;引用、代码&lt;/h2&gt;
+&lt;p&gt;在一行最前方用符号(&amp;gt;)来创建块引用。可以使用多个(&amp;gt;)来实现嵌套。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hi&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你好&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;Hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &amp;gt;&amp;gt;hi
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &amp;gt;&amp;gt;&amp;gt;你好
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用反引号(`)(在键盘左上角,esc下方这个键)将单词括起来表示代码,但只能在一行之间显示,如果有多行代码,需要每行都使用。
+&lt;code&gt;#include &amp;lt;stdio&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在一段代码的前后使用三个反引号(```)或三个波浪号(~~~)来表示代码块。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;ni&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stdio.h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		int main(void)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 		{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			printf(&amp;#34;Hello World!&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			return 0;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;列表&#34;&gt;列表&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;有序列表
+在每个列表项前添加数字加一个英文句号(如1.)来创建有序列表。数字可以不按数学顺序(会自动修正成数学顺序),但必须从1开始。用缩进来嵌套列表。
+&lt;ol&gt;
+&lt;li&gt;A&lt;/li&gt;
+&lt;li&gt;B&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; A
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; B
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;3.&lt;/span&gt; C
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;无序列表
+在每个列表项前添加一个添加破折号 (-)、星号 (*) 或加号 (+) 来创建无序列表,注意符号与文本之间有一个空格。同样用缩进来嵌套列表。
+&lt;ul&gt;
+&lt;li&gt;A&lt;/li&gt;
+&lt;li&gt;B&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;*&lt;/span&gt; A
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;*&lt;/span&gt; B
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;*&lt;/span&gt; C
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;任务列表
+在每个列表项前添加一个破折号和一对方括号,并在方括号之前添加一个空格(- [])来建立任务列表,要使复选框打勾,就在方括号之间加一个x([x])。
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; A&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; B&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; C&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;- [x]&lt;/span&gt; A
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;- [ ]&lt;/span&gt; B
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;- [ ]&lt;/span&gt; C
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;分隔线&#34;&gt;分隔线&lt;/h2&gt;
+&lt;p&gt;在一行内单独的使用三个或多个星号 (***)、破折号 (---) 或下划线 (___) 来表示分割线。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;链接&#34;&gt;链接&lt;/h2&gt;
+&lt;p&gt;链接语法:&lt;code&gt;[超链接显示名](超链接地址 &amp;quot;超链接title&amp;quot;)&lt;/code&gt;
+超链接显示名:超链接的文本
+超链接title:鼠标放在超链接上显示的文本
+如:这是一个链接:&lt;code&gt;[欢迎](https://nothingalr8.top/2022/09/19/%E6%AC%A2%E8%BF%8E/ &amp;quot;欢迎&amp;quot;)&lt;/code&gt;
+这是一个链接:&lt;a class=&#34;link&#34; href=&#34;https://nothingalr8.top/2022/09/19/%E6%AC%A2%E8%BF%8E/&#34;  title=&#34;欢迎&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;欢迎&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;也可以使用&amp;lt;&amp;gt;将邮箱或网址扩起来,来表示链接。但即使未将网址用&amp;lt;&amp;gt;括起来,Markdown处理器也会自动将其转换为链接。如果不希望自动链接,就是要反引号(``)将网址括起来。&lt;/p&gt;
+&lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
+&lt;p&gt;插入图片Markdown语法代码:&lt;code&gt;![图片alt](图片链接)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如:&lt;code&gt;![这只是一张简简单单的图片](This_is_a_simple_picture.png)&lt;/code&gt;
+&lt;img src=&#34;http://blog.nothingalr8.top/post/markdown%E7%AC%94%E8%AE%B0/This_is_a_simple_picture.png&#34;
+	width=&#34;727&#34;
+	height=&#34;110&#34;
+	srcset=&#34;http://blog.nothingalr8.top/post/markdown%E7%AC%94%E8%AE%B0/This_is_a_simple_picture_hu20dad5b6570ea334ebfd76f17d2a36c5_9568_480x0_resize_box_3.png 480w, http://blog.nothingalr8.top/post/markdown%E7%AC%94%E8%AE%B0/This_is_a_simple_picture_hu20dad5b6570ea334ebfd76f17d2a36c5_9568_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;这只是一张简简单单的图片&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;660&#34;
+		data-flex-basis=&#34;1586px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;hexo图片使用&lt;/strong&gt;
+参考:&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/265077468&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zhuanlan.zhihu.com/p/265077468&lt;/a&gt;
+其中图片链接可以是相对路径,绝对路径或是网络路径。
+网络路径就是直接引用网上的图片,直接复制图片地址,放在圆括号中。
+这种方式十分的方便,但是也存在一定的问题:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图片失效导致无法加载;&lt;/li&gt;
+&lt;li&gt;打开网页后要再请求加载图片;&lt;/li&gt;
+&lt;li&gt;原网站限制,图片会变得不可见等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;而博客是配置在网络上的,应选择使用相对路径的方式。
+我们要使用文章资源文件夹,在hexo中使用文章资源文件夹需要将博客文件目录下的&lt;code&gt;config.yaml&lt;/code&gt;文件中更改一下配置:
+&lt;code&gt;post_asset_folder: true&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;当该配置被应用后,使用hexo new命令创建新文章时,会生成相同名字的文件夹,也就是文章资源文件夹。&lt;/p&gt;
+&lt;p&gt;由于项目会生成新的文件目录,同时会解析Markdown中的图片路径,会导致一个问题。
+如在一个文件目录下,博客名为1.md,相应的存在一个1文件夹存放图片image.jpg。
+在hexo中,按理说应该是使用&lt;code&gt;![](image.jpg)&lt;/code&gt;来使用图片,但网页中却无法正常显示。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题,我们需要使用&lt;code&gt;hexo-renderer-marked&lt;/code&gt;插件安装这个插件,使用以下命令来安装这个插件。
+&lt;code&gt;npm install hexo-renderer-marked&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;之后需要在源文件&lt;code&gt;config.yaml&lt;/code&gt;更改一下配置(更改第一行,在最后添加第二到四行):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;post_asset_folder: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;marked:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	prependRoot: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	postAsset: true
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;转义字符&#34;&gt;转义字符&lt;/h2&gt;
+&lt;p&gt;要显示Markdown语法中使用到的特殊字符需要使用转义字符反斜杠(\)。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;需要转义的字符&lt;/th&gt;
+&lt;th&gt;字符名称&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;td&gt;反斜杠&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;`&lt;/td&gt;
+&lt;td&gt;反引号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;星号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;_&lt;/td&gt;
+&lt;td&gt;下划线&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;+&lt;/td&gt;
+&lt;td&gt;加号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;减号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;.&lt;/td&gt;
+&lt;td&gt;小数点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;!&lt;/td&gt;
+&lt;td&gt;感叹号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;|&lt;/td&gt;
+&lt;td&gt;竖线&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;#&lt;/td&gt;
+&lt;td&gt;井号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;()&lt;/td&gt;
+&lt;td&gt;圆括号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;[]&lt;/td&gt;
+&lt;td&gt;方括号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;{}&lt;/td&gt;
+&lt;td&gt;花括号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
+&lt;p&gt;要添加表格,需要使用3个及以上减号字符(---)并使用竖线(|)来分隔每列,可以在表歌任意一端扩展表格。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Syntax&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Header&lt;/td&gt;
+&lt;td&gt;Title&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Paragraph&lt;/td&gt;
+&lt;td&gt;Text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Syntax      | Description |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| --------------| ------------|
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Header      | Title     |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Paragraph    | Text      |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;对齐&lt;/strong&gt;
+可以在标题行(即第二行)减号的左、右侧或两侧增加冒号来使文本对齐到左侧、右侧或是居中。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Syntax&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Test Text&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Header&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Title&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;Here&amp;rsquo;s this&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Paragraph&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Text&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;And more&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Syntax      | Description | Test Text     |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| :------        |    :---------:  |    -------: |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Header      | Title       | Here&amp;#39;s this   |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| Paragraph   | Text        | And more      |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;脚注&#34;&gt;脚注&lt;/h2&gt;
+&lt;p&gt;要创建脚注,需要使用&lt;code&gt;[^x]&lt;/code&gt;符号,其中x可以为任意数字,但会自动转化为连续的数字,但不能含有空格。在博客的其他位置使用&lt;code&gt;[^x]: 文本&lt;/code&gt;为脚注添加注释。 但是hexo的默认渲染器并不支持脚注功能,需要安装&lt;code&gt;hexo-reference&lt;/code&gt;插件。
+安装代码: &lt;code&gt;npm install hexo-reference&lt;/code&gt;
+并在网站目录下的&lt;code&gt;_config.yml&lt;/code&gt;文件中添加一下代码:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;plugins:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - hexo-reference
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;但是使用插件会有问题,需要把注释放在最后。同时,插件似乎与next主题会产生bug,导致跳转按钮错位,我就不使用了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这是一个脚注[^1]。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[^1]:Hello!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;使用emoji表情&#34;&gt;使用emoji表情&lt;/h2&gt;
+&lt;p&gt;使用emoji表情有两种方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从&lt;a class=&#34;link&#34; href=&#34;https://emojipedia.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Emojipedia&lt;/a&gt;或其他源上复制表情,并粘贴在Markdown文件中。❤️&lt;/li&gt;
+&lt;li&gt;使用表情符号简码。在Markdown中以两个冒号夹着一个表情符号的名称(:表情符号的名称:)来构成表情号简码。而&lt;a class=&#34;link&#34; href=&#34;https://gist.github.com/rxaviers/7360908&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;此网站&lt;/a&gt;将为你提供各种表情符号简码。但注意,有些网站可能无法识别,比如说我的。
+:smile:		:tent:
+&lt;code&gt;:smile:&lt;/code&gt;	&lt;code&gt;:tent:&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;内嵌html标签&#34;&gt;内嵌html标签&lt;/h2&gt;
+&lt;p&gt;在Markdown中使用html语言,并不需要额外标注,可以直接使用。但在html中markdown不适用。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

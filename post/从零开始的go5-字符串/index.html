@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='字符串 在Go中，字符串是 UTF-8 字符的一个序列，一个字符可能占用1个字节(ASCII码)，或是2~4个字节。
+定义 通过以下两种形式定义字符串：
+1 2 var s1 string s2 := &amp;#34;Hello!&amp;#34; 索引与切片 索引 可以将一个字符串看成数组，来获取其某一字节上的值。类似数组，string[0]对应第一个字节。
+1 2 3 4 s1 := &amp;#34;hello&amp;#34; fmt.Println(s1[0])	//结果为104，对于h的ASCII码 fmt.Println(s1[3])	//结果为108，对于l的ASCII码 fmt.Println(string(s1[3]))	//加上string()函数,则输出字符 而对于中文等多字节字符，并不可以直接使用索引来得出各位字符，只能得到某个字节的值，需要先转换为rune切片：
+1 2 3 s2 := &amp;#34;你好！&amp;#34; fmt.Println(([]rune(s2))[0])	//结果为20320，为4f60的十进制表示形式，为&amp;#39;你&amp;#39;的UTF-8编码 fmt.Println(string(([]rune(s2))[0]))	//结果为&amp;#34;你&amp;#34; 切片 通过以下方式来获取字符串的某几个连续字节上的值：
+1 2 3 4 5 s1 := &amp;#34;hello!&amp;#34; fmt.Println(s1[0:5])	// &amp;#34;hello&amp;#34;	遵循向前取整的规则，取到索引为4的字节 fmt.Println(s1[:5])	// &amp;#34;hello&amp;#34;	前一个数为空，即从0开始 fmt.Println(s1[4:])	// &amp;#34;o!&amp;#34;	后一个数为空，即到最后一个字符为止 fmt.Println(s1[:]) // &amp;#34;hello!&amp;#34;	若两个字符都为空，则取整个字符串 同样的，对与中文字符，需要先转化为rune切片：
+1 2 3 s2 := &amp;#34;你好！&amp;#34; fmt.'>
+<title>从零开始的Go(5)-字符串</title>
+
+<link rel='canonical' href='http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go5-%E5%AD%97%E7%AC%A6%E4%B8%B2/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='从零开始的Go(5)-字符串'>
+<meta property='og:description' content='字符串 在Go中，字符串是 UTF-8 字符的一个序列，一个字符可能占用1个字节(ASCII码)，或是2~4个字节。
+定义 通过以下两种形式定义字符串：
+1 2 var s1 string s2 := &amp;#34;Hello!&amp;#34; 索引与切片 索引 可以将一个字符串看成数组，来获取其某一字节上的值。类似数组，string[0]对应第一个字节。
+1 2 3 4 s1 := &amp;#34;hello&amp;#34; fmt.Println(s1[0])	//结果为104，对于h的ASCII码 fmt.Println(s1[3])	//结果为108，对于l的ASCII码 fmt.Println(string(s1[3]))	//加上string()函数,则输出字符 而对于中文等多字节字符，并不可以直接使用索引来得出各位字符，只能得到某个字节的值，需要先转换为rune切片：
+1 2 3 s2 := &amp;#34;你好！&amp;#34; fmt.Println(([]rune(s2))[0])	//结果为20320，为4f60的十进制表示形式，为&amp;#39;你&amp;#39;的UTF-8编码 fmt.Println(string(([]rune(s2))[0]))	//结果为&amp;#34;你&amp;#34; 切片 通过以下方式来获取字符串的某几个连续字节上的值：
+1 2 3 4 5 s1 := &amp;#34;hello!&amp;#34; fmt.Println(s1[0:5])	// &amp;#34;hello&amp;#34;	遵循向前取整的规则，取到索引为4的字节 fmt.Println(s1[:5])	// &amp;#34;hello&amp;#34;	前一个数为空，即从0开始 fmt.Println(s1[4:])	// &amp;#34;o!&amp;#34;	后一个数为空，即到最后一个字符为止 fmt.Println(s1[:]) // &amp;#34;hello!&amp;#34;	若两个字符都为空，则取整个字符串 同样的，对与中文字符，需要先转化为rune切片：
+1 2 3 s2 := &amp;#34;你好！&amp;#34; fmt.'>
+<meta property='og:url' content='http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go5-%E5%AD%97%E7%AC%A6%E4%B8%B2/'>
+<meta property='og:site_name' content='NothingAlr8&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='技术' /><meta property='article:tag' content='Go' /><meta property='article:published_time' content='2022-10-19T17:35:23&#43;00:00'/><meta property='article:modified_time' content='2022-10-19T17:35:23&#43;00:00'/>
+<meta name="twitter:title" content="从零开始的Go(5)-字符串">
+<meta name="twitter:description" content="字符串 在Go中，字符串是 UTF-8 字符的一个序列，一个字符可能占用1个字节(ASCII码)，或是2~4个字节。
+定义 通过以下两种形式定义字符串：
+1 2 var s1 string s2 := &amp;#34;Hello!&amp;#34; 索引与切片 索引 可以将一个字符串看成数组，来获取其某一字节上的值。类似数组，string[0]对应第一个字节。
+1 2 3 4 s1 := &amp;#34;hello&amp;#34; fmt.Println(s1[0])	//结果为104，对于h的ASCII码 fmt.Println(s1[3])	//结果为108，对于l的ASCII码 fmt.Println(string(s1[3]))	//加上string()函数,则输出字符 而对于中文等多字节字符，并不可以直接使用索引来得出各位字符，只能得到某个字节的值，需要先转换为rune切片：
+1 2 3 s2 := &amp;#34;你好！&amp;#34; fmt.Println(([]rune(s2))[0])	//结果为20320，为4f60的十进制表示形式，为&amp;#39;你&amp;#39;的UTF-8编码 fmt.Println(string(([]rune(s2))[0]))	//结果为&amp;#34;你&amp;#34; 切片 通过以下方式来获取字符串的某几个连续字节上的值：
+1 2 3 4 5 s1 := &amp;#34;hello!&amp;#34; fmt.Println(s1[0:5])	// &amp;#34;hello&amp;#34;	遵循向前取整的规则，取到索引为4的字节 fmt.Println(s1[:5])	// &amp;#34;hello&amp;#34;	前一个数为空，即从0开始 fmt.Println(s1[4:])	// &amp;#34;o!&amp;#34;	后一个数为空，即到最后一个字符为止 fmt.Println(s1[:]) // &amp;#34;hello!&amp;#34;	若两个字符都为空，则取整个字符串 同样的，对与中文字符，需要先转化为rune切片：
+1 2 3 s2 := &amp;#34;你好！&amp;#34; fmt.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">NothingAlr8&#39;s Blog</a></h1>
+            <h2 class="site-description">欢迎来到NothingAlr8的博客!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/B-Zz'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://blog.nothingalr8.top/index.xml'
+                        target="_blank"
+                        title="rss"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜素</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#索引与切片">索引与切片</a>
+      <ol>
+        <li><a href="#索引">索引</a></li>
+        <li><a href="#切片">切片</a></li>
+      </ol>
+    </li>
+    <li><a href="#编辑">编辑</a></li>
+    <li><a href="#拼接与比较">拼接与比较</a>
+      <ol>
+        <li><a href="#拼接">拼接</a></li>
+        <li><a href="#比较">比较</a></li>
+      </ol>
+    </li>
+    <li><a href="#求长度">求长度</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#strings包">strings包</a>
+      <ol>
+        <li><a href="#前缀与后缀">前缀与后缀</a></li>
+        <li><a href="#包含">包含</a></li>
+        <li><a href="#获取某字符串在另一字符串中位置索引">获取某字符串在另一字符串中位置(索引)</a></li>
+        <li><a href="#出现次数统计">出现次数统计</a></li>
+        <li><a href="#重复字符串">重复字符串</a></li>
+        <li><a href="#从字符串中读取内容">从字符串中读取内容</a></li>
+        <li><a href="#字符串替换">字符串替换</a></li>
+        <li><a href="#修剪字符串">修剪字符串</a></li>
+        <li><a href="#大小写转换">大小写转换</a></li>
+      </ol>
+    </li>
+    <li><a href="#strconv包">strconv包</a>
+      <ol>
+        <li><a href="#数字转换字符串">数字转换字符串</a></li>
+        <li><a href="#字符串转换数字">字符串转换数字</a>
+          <ol>
+            <li><a href="#转换为整形">转换为整形</a></li>
+            <li><a href="#转换为浮点型">转换为浮点型</a></li>
+          </ol>
+        </li>
+        <li><a href="#其他">其他</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" style="background-color: #2a9d8f; color: #fff;">
+                技术
+            </a>
+        
+            <a href="/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go/" style="background-color: #2a9d8f; color: #fff;">
+                从零开始的Go
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go5-%E5%AD%97%E7%AC%A6%E4%B8%B2/">从零开始的Go(5)-字符串</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 19, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="字符串">字符串</h1>
+<p>在Go中，字符串是 <code>UTF-8</code> 字符的一个序列，一个字符可能占用1个字节(ASCII码)，或是2~4个字节。</p>
+<h2 id="定义">定义</h2>
+<p>通过以下两种形式定义字符串：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">s1</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;Hello!&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="索引与切片">索引与切片</h2>
+<h3 id="索引">索引</h3>
+<p>可以将一个字符串看成数组，来获取其某一字节上的值。类似数组，string[0]对应第一个字节。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>	<span class="c1">//结果为104，对于h的ASCII码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>	<span class="c1">//结果为108，对于l的ASCII码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">s1</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>	<span class="c1">//加上string()函数,则输出字符
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>而对于中文等多字节字符，并不可以直接使用索引来得出各位字符，只能得到某个字节的值，需要先转换为rune切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;你好！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">s2</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>	<span class="c1">//结果为20320，为4f60的十进制表示形式，为&#39;你&#39;的UTF-8编码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">s2</span><span class="p">))[</span><span class="mi">0</span><span class="p">]))</span>	<span class="c1">//结果为&#34;你&#34;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="切片">切片</h3>
+<p>通过以下方式来获取字符串的某几个连续字节上的值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>	<span class="c1">// &#34;hello&#34;	遵循向前取整的规则，取到索引为4的字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>	<span class="c1">// &#34;hello&#34;	前一个数为空，即从0开始
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>	<span class="c1">// &#34;o!&#34;	后一个数为空，即到最后一个字符为止
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span><span class="p">[:])</span> 	<span class="c1">// &#34;hello!&#34;	若两个字符都为空，则取整个字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>同样的，对与中文字符，需要先转化为<code>rune</code>切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;你好！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">s2</span><span class="p">))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>	<span class="c1">//结果为[20320 22909]，为&#39;你&#39;与&#39;好&#39;的UTF-8编码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">s2</span><span class="p">))[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]))</span>	<span class="c1">//加上string()函数，则输出&#34;你好&#34;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编辑">编辑</h2>
+<p>在Go中，无法直接对string的某一位上的值进行改变，需要先进行类型的转化。</p>
+<p>运行以下命令会出错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="sc">&#39;1&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果是单一的ASCII码组成的字符串，则可以转化成<code>[]byte</code>类型，而含有多字节字符的则需转化位<code>[]rune</code>类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s1_</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">s1</span><span class="p">)</span>	<span class="c1">//转化成[]byte类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">s1_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="sc">&#39;H&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">s1_</span><span class="p">))</span>	<span class="c1">//结果为&#34;Hello!&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;你好！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2_</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">s2</span><span class="p">)</span>	<span class="c1">//转化成[]rune类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">s2_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;您&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">s2_</span><span class="p">))</span>	<span class="c1">//结果为&#34;您好！&#34;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="拼接与比较">拼接与比较</h2>
+<h3 id="拼接">拼接</h3>
+<p>使用<code>+</code>对字符串进行拼接（当然可以使用<code>+=</code>），如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;Hello &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;World!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s3</span> <span class="o">:=</span> <span class="nx">s1</span><span class="o">+</span><span class="nx">s2</span>		<span class="c1">//s3结果为&#34;Hello World!&#34;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="比较">比较</h3>
+<p>字符串的比较是按字节比较，从第一个字节开始比较，大的为字符串的第一个字节大的字符串，如果第一个字节一样大，则顺次比较。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;ab&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;123&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s1</span> <span class="p">&gt;</span> <span class="nx">s2</span><span class="p">)</span> 	<span class="c1">//结果为true
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="求长度">求长度</h2>
+<p>可以通过<code>len()</code>函数来获取字符串的长度，但是这个函数实际上求的是字符串的字节长度。</p>
+<p>可以通过以下代码来看出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;Hello!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">s1</span><span class="p">))</span>	<span class="c1">//得出的结果为6，一个ASCII字符占1个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span>  <span class="s">&#34;你好！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">s2</span><span class="p">))</span>	<span class="c1">//得出的结果为9，在UTF-8中，每一个中文及全角字符占3个字节
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>那要如何计算出除ASCII码之外字符的实际长度呢？也需转化为rune切片：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span>  <span class="s">&#34;你好！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">s2</span><span class="p">)))</span>	<span class="c1">//得出结果为3
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="相关包">相关包</h1>
+<h2 id="strings包">strings包</h2>
+<p>strings包为go提供了一系列对字符串进行操作的函数。</p>
+<h3 id="前缀与后缀">前缀与后缀</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">strings</span><span class="p">.</span><span class="nf">HasPrefix</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">prefix</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span>	<span class="c1">//判断前缀，若对与字符串s来说，前缀为prefix，则返回true，反之则返回false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">strings</span><span class="p">.</span><span class="nf">HasSuffix</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">suffix</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span>	<span class="c1">//判断后缀，同判断前缀
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">HasPrefix</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span><span class="s">&#34;h&#34;</span><span class="p">))</span>	<span class="c1">//结果为true
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="包含">包含</h3>
+<p><code>strings.Contains(s, substr string) bool</code></p>
+<p>判断字符串<code>s</code>是否包含<code>substr</code>部分，若包含，返回true，反之则返回false</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span><span class="s">&#34;hell&#34;</span><span class="p">))</span>	<span class="c1">//结果为true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span><span class="s">&#34;helll&#34;</span><span class="p">))</span>	<span class="c1">//结果为false
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取某字符串在另一字符串中位置索引">获取某字符串在另一字符串中位置(索引)</h3>
+<p>返回为str在字符串s中的第一个索引位置，若str为字符串，则返回第一个字符对应的索引位置。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">strings</span><span class="p">.</span><span class="nf">Index</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">str</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">int</span>	
+</span></span><span class="line"><span class="cl"><span class="nx">strings</span><span class="p">.</span><span class="nf">LastIndex</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">str</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">int</span>	<span class="c1">//规则同Index，但是返回最后一个符合的索引位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">strings</span><span class="p">.</span><span class="nf">IndexRune</span><span class="p">(</span><span class="nx">s</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">r</span> <span class="kt">rune</span><span class="p">)</span> <span class="kt">int</span>		<span class="c1">//适用于非ASCII字符串
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Index</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="s">&#34;l&#34;</span><span class="p">))</span>	<span class="c1">//结果为2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Index</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="s">&#34;el&#34;</span><span class="p">))</span>	<span class="c1">//结果为1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">LastIndex</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="s">&#34;l&#34;</span><span class="p">))</span>	<span class="c1">//结果为3
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="出现次数统计">出现次数统计</h3>
+<p><code>strings.Count(s, str string) int</code></p>
+<p>统计<code>str</code>在字符串<code>s</code>中出现的次数，并返回。</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Count</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="s">&#34;l&#34;</span><span class="p">))</span>	<span class="c1">//结果为2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Count</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="s">&#34;e&#34;</span><span class="p">))</span>	<span class="c1">//结果为1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="重复字符串">重复字符串</h3>
+<p>重复<code>count</code>次字符串<code>s</code>，并返回。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">strings</span><span class="p">.</span><span class="nf">Repeat</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">count</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">string</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Repeat</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="从字符串中读取内容">从字符串中读取内容</h3>
+<p>函数 <code>strings.NewReader()</code> 用于生成一个 <code>Reader</code> 并读取字符串中的内容，然后返回指向该 <code>Reader</code> 的指针，从其它类型读取内容的函数还有：</p>
+<p><code>Read()</code>从<code>[]byte</code>中读取内容。
+<code>ReadByte()</code> 和 <code>ReadRune()</code>从字符串中读取下一个 <code>byte</code> 或者 <code>rune</code>。</p>
+<h3 id="字符串替换">字符串替换</h3>
+<p><code>strings.Replace(str, old, new string, n int) string</code></p>
+<p>将字符串<code>str</code>中的前 <code>n</code> 个字符串<code>old</code>替换为字符串<code>new</code>，并返回一个新的字符串。如果<code>n = -1</code>则替换所有字符串<code>old</code>为字符串<code>new</code></p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span><span class="s">&#34;l&#34;</span><span class="p">,</span><span class="s">&#34;o&#34;</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>	<span class="c1">//heolo
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span><span class="s">&#34;l&#34;</span><span class="p">,</span><span class="s">&#34;o&#34;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>	<span class="c1">//heooo
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修剪字符串">修剪字符串</h3>
+<p>使用 <code>strings.TrimSpace()</code> 来剔除字符串开头和结尾的空白符号</p>
+<p>如果想要剔除指定字符，则可以使用 <code>strings.Trim(s, &quot;cut&quot;)</code> 来将开头和结尾的 <code>cut</code> 部分去除掉</p>
+<p>如果只想剔除开头或者结尾的字符串，则可以使用 <code>strings.TrimLeft</code> 或者 <code>strings.TrimRight</code> 来实现</p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34; hello &#34;</span>	
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;hellhe&#34;</span>	
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">TrimSpace</span><span class="p">(</span><span class="nx">s1</span><span class="p">))</span>	<span class="c1">//hello
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Trim</span><span class="p">(</span><span class="nx">s2</span><span class="p">,</span> <span class="s">&#34;he&#34;</span><span class="p">))</span>	<span class="c1">//ll
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">TrimLeft</span><span class="p">(</span><span class="nx">s2</span><span class="p">,</span> <span class="s">&#34;he&#34;</span><span class="p">))</span>	<span class="c1">//llhe
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">TrimRight</span><span class="p">(</span><span class="nx">s2</span><span class="p">,</span> <span class="s">&#34;he&#34;</span><span class="p">))</span>	<span class="c1">//hell
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="大小写转换">大小写转换</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="kt">string</span>	<span class="c1">//将字符串s中的所有大写字母转换为小写字母
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">strings</span><span class="p">.</span><span class="nf">ToUpper</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="kt">string</span>	<span class="c1">//将字符串s中的所有小写字母转换为大写字母
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;hello!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ToUpper</span><span class="p">(</span><span class="nx">s1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;HeLLO!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">ToLower</span><span class="p">(</span><span class="nx">s2</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="strconv包">strconv包</h2>
+<p>strconv包为go提供了许多字符串与其他类型转换的函数。</p>
+<h3 id="数字转换字符串">数字转换字符串</h3>
+<p><code>strconv.Itoa(i int) string</code></p>
+<p>返回数字 <code>i</code> 所表示的字符串类型的十进制数</p>
+<p><code>strconv.FormatFloat(f float64, fmt byte, prec int, bitSize int) string</code></p>
+<p>将 64 位浮点型的数字<code>f</code>转换为字符串并返回，其中 <code>fmt</code> 表示格式（其值可以是 &lsquo;b&rsquo;、&rsquo;e&rsquo;、&lsquo;f&rsquo; 或 &lsquo;g&rsquo;），<code>prec</code> 表示精度，<code>bitSize</code> 则使用 32 表示 float32，用 64 表示 float64</p>
+<h3 id="字符串转换数字">字符串转换数字</h3>
+<h4 id="转换为整形">转换为整形</h4>
+<p><code>strconv.Atoi(s string) (i int, err error)</code></p>
+<p>将数字字符串<code>s</code>转化为整数<code>i</code>，并返回，如果产生错误，返回<code>err</code></p>
+<p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">s1</span> <span class="o">:=</span> <span class="s">&#34;123&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">a</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Atoi</span><span class="p">(</span><span class="nx">s1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="c1">// 若不需要返回错误，可以直接这样写：
+</span></span></span><span class="line"><span class="cl"><span class="c1">//a, _ := strconv.Atoi(s1) 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="转换为浮点型">转换为浮点型</h4>
+<p><code>strconv.ParseFloat(s string, bitSize int) (f float64, err error)</code></p>
+<p>将数字字符串(可以含小数)<code>s</code>转换为浮点型<code>f</code>，如果产生错误，返回<code>err</code>，<code>bitSize</code>可以位32或64，表示float32或float64</p>
+<h3 id="其他">其他</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">strconv</span><span class="p">.</span><span class="nx">IntSize</span>	<span class="c1">//获取程序运行的操作系统平台下 int 类型所占的位数
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+        
+            <a href="/tags/go/">Go</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go-%E5%B9%B6%E5%8F%91/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的Go(?)-并发</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go11-%E5%87%BD%E6%95%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的Go(11)-函数</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go10-%E7%BB%93%E6%9E%84%E4%BD%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的Go(10)-结构体</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go9-map/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的Go(9)-Map</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go8-%E6%8C%87%E9%92%88/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零开始的Go(8)-指针</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.5.11/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send {
+        color: var(--twikoo-body-text-color-main);
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: 'https:\/\/twikoo.nothingalr8.top',
+        el: '#tcomment',lang: 'zh-CN',})
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 NothingAlr8&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

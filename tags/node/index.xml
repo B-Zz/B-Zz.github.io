@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>node on NothingAlr8&#39;s Blog</title>
+        <link>http://blog.nothingalr8.top/tags/node/</link>
+        <description>Recent content in node on NothingAlr8&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language><atom:link href="http://blog.nothingalr8.top/tags/node/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>博客日志(1)-网站建立</title>
+        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</guid>
+        <description>&lt;h1 id=&#34;开始&#34;&gt;开始&lt;/h1&gt;
+&lt;p&gt;2022年9月18日,我其实已经有搭建博客这个想法很久了。而这一天,我在学长的建议下,正式开始了这一项工作。而对于一个没有一点web基础的新人来说,这并不是一件简单的事。我开始在网络上寻找搭建博客的方法,并一步步建立了博客。&lt;/p&gt;
+&lt;h1 id=&#34;建站过程&#34;&gt;建站过程&lt;/h1&gt;
+&lt;p&gt;其实建立博客比我预想的简单许多,Hexo提供了一个简易的建站模式,使个人博客的建立变得简单。我只是简单的跟着教程,安装node与npm,建立了hexo博客,并部署在GitHub Page上,使用Next主题,并用livere添加了评论,一切似乎都比较容易,我也对博客进行了一定的美化,而这只用了区区两天。到了9月19日晚上,我就已经完成了网站的建立,并发表了我的第一篇博客。&lt;/p&gt;
+&lt;p&gt;虽然我已经完成了博客的建立,但我还没有理解博客的运行原理,没有真正搞懂Hexo,而到我渐渐理解了,我想我会分享一篇使用Hexo建立个人博客的教程。&lt;/p&gt;
+&lt;h1 id=&#34;建站目的&#34;&gt;建站目的?&lt;/h1&gt;
+&lt;p&gt;我的博客已初步建立完成,我也开始思考我建站的目的。我到底想在博客上写什么。我到现在还没有太好的想法,只是简单的记录学习过程?等我确定之后,我会在博客的关于页写明。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
