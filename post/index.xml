@@ -356,12 +356,16 @@
 &lt;p&gt;但是Typora无法识别，只需在md头文件中加入一行：&lt;code&gt;typora-root-url: /文章名&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hexo部署失败问题&#34;&gt;Hexo部署失败问题&lt;/h2&gt;
 &lt;p&gt;在执行&lt;code&gt;hexo d&lt;/code&gt;命令时，有时会遇到报错，报错如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.nothingalr8.top/hexo-d-err.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/hexo-d-err.png&#34;
+	width=&#34;1062&#34;
+	height=&#34;606&#34;
+	srcset=&#34;http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/hexo-d-err_hude9fea3f396330df5493082a88a9c905_112402_480x0_resize_box_3.png 480w, http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/hexo-d-err_hude9fea3f396330df5493082a88a9c905_112402_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;175&#34;
+		data-flex-basis=&#34;420px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;经过测试与尝试，网上找到的方法都无法解决问题，这只是网络问题。&lt;/p&gt;
