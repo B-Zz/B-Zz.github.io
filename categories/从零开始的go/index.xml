@@ -333,6 +333,14 @@
 &lt;/div&gt;</description>
         </item>
         <item>
+        <title>从零开始的Go(12)-方法</title>
+        <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Mon, 02 Jan 2023 15:35:23 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>从零开始的Go(11)-函数</title>
         <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go11-%E5%87%BD%E6%95%B0/</link>
         <pubDate>Mon, 31 Oct 2022 17:35:23 +0000</pubDate>
@@ -2251,7 +2259,7 @@
         <pubDate>Thu, 13 Oct 2022 13:35:23 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go0-%E5%89%8D%E8%A8%80/</guid>
-        <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+        <description>&lt;img src="http://blog.nothingalr8.top/Go1.jpg" alt="Featured image of post 从零开始的Go(0)-前言" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;h1 id=&#34;关于go&#34;&gt;关于Go&lt;/h1&gt;
 &lt;h1 id=&#34;参考教程&#34;&gt;参考教程&lt;/h1&gt;
 &lt;ol&gt;
@@ -2263,14 +2271,6 @@
     &gt;Go 语言教程 | 菜鸟教程 (runoob.com)&lt;/a&gt;)&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        </item>
-        <item>
-        <title>从零开始的Go(12)-方法</title>
-        <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</guid>
-        <description></description>
         </item>
         
     </channel>

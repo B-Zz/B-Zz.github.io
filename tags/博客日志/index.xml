@@ -6,7 +6,16 @@
         <description>Recent content in 博客日志 on NothingAlr8&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 22 Nov 2022 19:23:36 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/tags/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jun 2023 19:23:36 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/tags/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>博客日志(6)-重构</title>
+        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976-%E9%87%8D%E6%9E%84/</link>
+        <pubDate>Sat, 03 Jun 2023 19:23:36 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976-%E9%87%8D%E6%9E%84/</guid>
+        <description>&lt;h1 id=&#34;博客重构&#34;&gt;博客重构&lt;/h1&gt;
+</description>
+        </item>
+        <item>
         <title>博客日志(5)</title>
         <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/</link>
         <pubDate>Tue, 22 Nov 2022 19:23:36 +0000</pubDate>
@@ -118,7 +127,7 @@
         <item>
         <title>博客日志(1)-网站建立</title>
         <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 18 Sep 2022 13:14:02 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</guid>
         <description>&lt;h1 id=&#34;开始&#34;&gt;开始&lt;/h1&gt;
@@ -128,17 +137,6 @@
 &lt;p&gt;虽然我已经完成了博客的建立,但我还没有理解博客的运行原理,没有真正搞懂Hexo,而到我渐渐理解了,我想我会分享一篇使用Hexo建立个人博客的教程。&lt;/p&gt;
 &lt;h1 id=&#34;建站目的&#34;&gt;建站目的?&lt;/h1&gt;
 &lt;p&gt;我的博客已初步建立完成,我也开始思考我建站的目的。我到底想在博客上写什么。我到现在还没有太好的想法,只是简单的记录学习过程?等我确定之后,我会在博客的关于页写明。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>博客日志(6)</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976/</guid>
-        <description>&lt;p&gt;已经非常非常久没有写博客了，已经四个多月了，都快半年没写了。至于原因，一是我发现我其实不太喜欢以前这种写博客的方式，将自己学的内容记下来写成教程的形式，二是我因为各种原因没有坚持下来。&lt;/p&gt;
-&lt;p&gt;但现在，我想，我多多少少应该写点内容了，毕竟也过去那么久了。&lt;/p&gt;
-&lt;p&gt;先来总结一下这几月的状况吧。我的ubuntu系统由于我自己乱改文件权限无法启动了，我重新装了一遍。但幸运的是，我重新装了系统文件就解决了，可以保留我的大多数文件(包括博客的源文件)。但是还是需要重新安装各种软件以及配置各种环境。&lt;/p&gt;
 </description>
         </item>
         

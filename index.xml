@@ -6,7 +6,16 @@
         <description>Recent content on NothingAlr8&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 05 Mar 2023 09:36:12 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jun 2023 19:23:36 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>博客日志(6)-重构</title>
+        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976-%E9%87%8D%E6%9E%84/</link>
+        <pubDate>Sat, 03 Jun 2023 19:23:36 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976-%E9%87%8D%E6%9E%84/</guid>
+        <description>&lt;h1 id=&#34;博客重构&#34;&gt;博客重构&lt;/h1&gt;
+</description>
+        </item>
+        <item>
         <title>从零开始的Go(?)-并发</title>
         <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go-%E5%B9%B6%E5%8F%91/</link>
         <pubDate>Sun, 05 Mar 2023 09:36:12 +0000</pubDate>
@@ -331,6 +340,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>从零开始的Go(12)-方法</title>
+        <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Mon, 02 Jan 2023 15:35:23 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</guid>
+        <description></description>
         </item>
         <item>
         <title>博客日志(5)</title>
@@ -2413,7 +2430,7 @@
         <pubDate>Thu, 13 Oct 2022 13:35:23 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go0-%E5%89%8D%E8%A8%80/</guid>
-        <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+        <description>&lt;img src="http://blog.nothingalr8.top/Go1.jpg" alt="Featured image of post 从零开始的Go(0)-前言" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;h1 id=&#34;关于go&#34;&gt;关于Go&lt;/h1&gt;
 &lt;h1 id=&#34;参考教程&#34;&gt;参考教程&lt;/h1&gt;
 &lt;ol&gt;
@@ -2903,17 +2920,9 @@
 </description>
         </item>
         <item>
-        <title>归档</title>
-        <link>http://blog.nothingalr8.top/archives/</link>
-        <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/archives/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>博客日志(1)-网站建立</title>
         <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 18 Sep 2022 13:14:02 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</guid>
         <description>&lt;h1 id=&#34;开始&#34;&gt;开始&lt;/h1&gt;
@@ -2926,22 +2935,11 @@
 </description>
         </item>
         <item>
-        <title>博客日志(6)</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <title>归档</title>
+        <link>http://blog.nothingalr8.top/archives/</link>
+        <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976/</guid>
-        <description>&lt;p&gt;已经非常非常久没有写博客了，已经四个多月了，都快半年没写了。至于原因，一是我发现我其实不太喜欢以前这种写博客的方式，将自己学的内容记下来写成教程的形式，二是我因为各种原因没有坚持下来。&lt;/p&gt;
-&lt;p&gt;但现在，我想，我多多少少应该写点内容了，毕竟也过去那么久了。&lt;/p&gt;
-&lt;p&gt;先来总结一下这几月的状况吧。我的ubuntu系统由于我自己乱改文件权限无法启动了，我重新装了一遍。但幸运的是，我重新装了系统文件就解决了，可以保留我的大多数文件(包括博客的源文件)。但是还是需要重新安装各种软件以及配置各种环境。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>从零开始的Go(12)-方法</title>
-        <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</guid>
+        <guid>http://blog.nothingalr8.top/archives/</guid>
         <description></description>
         </item>
         <item>

@@ -6,13 +6,21 @@
         <description>Recent content in Categories on NothingAlr8&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 05 Mar 2023 09:36:12 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jun 2023 19:23:36 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>博客日志</title>
+        <link>http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</link>
+        <pubDate>Sat, 03 Jun 2023 19:23:36 +0000</pubDate>
+        
+        <guid>http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</guid>
+        <description>&lt;img src="http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 博客日志" /&gt;</description>
+        </item>
+        <item>
         <title>从零开始的Go</title>
         <link>http://blog.nothingalr8.top/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go/</link>
         <pubDate>Sun, 05 Mar 2023 09:36:12 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go/</guid>
-        <description>&lt;img src="http://blog.nothingalr8.top/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 从零开始的Go" /&gt;</description>
+        <description>&lt;img src="http://blog.nothingalr8.top/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go/Go.jpg" alt="Featured image of post 从零开始的Go" /&gt;</description>
         </item>
         <item>
         <title>技术</title>
@@ -21,14 +29,6 @@
         
         <guid>http://blog.nothingalr8.top/categories/%E6%8A%80%E6%9C%AF/</guid>
         <description>&lt;img src="http://blog.nothingalr8.top/categories/%E6%8A%80%E6%9C%AF/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 技术" /&gt;</description>
-        </item>
-        <item>
-        <title>博客日志</title>
-        <link>http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</link>
-        <pubDate>Tue, 22 Nov 2022 19:23:36 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</guid>
-        <description>&lt;img src="http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 博客日志" /&gt;</description>
         </item>
         <item>
         <title>随笔</title>
