@@ -33,15 +33,6 @@
 </description>
         </item>
         <item>
-        <title>博客日志(6)-重构</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976-%E9%87%8D%E6%9E%84/</link>
-        <pubDate>Sat, 03 Jun 2023 19:23:36 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%976-%E9%87%8D%E6%9E%84/</guid>
-        <description>&lt;h1 id=&#34;博客重构&#34;&gt;博客重构&lt;/h1&gt;
-</description>
-        </item>
-        <item>
         <title>从零开始的Go(?)-并发</title>
         <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go-%E5%B9%B6%E5%8F%91/</link>
         <pubDate>Sun, 05 Mar 2023 09:36:12 +0000</pubDate>
@@ -374,89 +365,6 @@
         
         <guid>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go12-%E6%96%B9%E6%B3%95/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>博客日志(5)</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/</link>
-        <pubDate>Tue, 22 Nov 2022 19:23:36 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/</guid>
-        <description>&lt;p&gt;好久没有写博客日志了，但对于博客的一些修修补补、改动还在不断，现小小地总结一下。&lt;/p&gt;
-&lt;h1 id=&#34;改动&#34;&gt;改动&lt;/h1&gt;
-&lt;p&gt;改动比较多，下面依次列出来：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;改了一些图片的地址，把原本比较乱的地址进行了梳理，所以更新地址都变为了同一天，可以在头文件中添加&lt;code&gt;updated: date &lt;/code&gt;解决，但我目前懒得搞了&lt;/li&gt;
-&lt;li&gt;改动(更新)了关于页&lt;/li&gt;
-&lt;li&gt;改用Typora作为我写md文件的编辑器，主要我原先使用的没有linux版&lt;/li&gt;
-&lt;li&gt;迁移了文件及环境配置到linux系统&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;遇到的坑&#34;&gt;遇到的坑&lt;/h1&gt;
-&lt;h2 id=&#34;图片地址问题&#34;&gt;图片地址问题&lt;/h2&gt;
-&lt;p&gt;Hexo的图片相对地址与Typora默认相对地址不一样，导致图片加载问题(二者只能加载出一个)。&lt;/p&gt;
-&lt;p&gt;默认情况下，hexo的相对地址从/source目录下开始，而Typora的相对地址为md文件的地址，可以通过在md头文件中加上&lt;code&gt;typora-root-url:&lt;/code&gt; 来改变Typora的相对地址。&lt;/p&gt;
-&lt;p&gt;最后，讲讲我的解决方法：&lt;/p&gt;
-&lt;p&gt;因为我在配置文件中打开了&lt;code&gt;post_asset_folder&lt;/code&gt;，会在&lt;code&gt;_posts&lt;/code&gt;目录下生成一个文章名的文件夹，相对地址改变为了对应的文件夹下，只需直接在文件夹下放图片，直接在图片链接中填写图片名就可以被hexo使用。&lt;/p&gt;
-&lt;p&gt;但是Typora无法识别，只需在md头文件中加入一行：&lt;code&gt;typora-root-url: /文章名&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;hexo部署失败问题&#34;&gt;Hexo部署失败问题&lt;/h2&gt;
-&lt;p&gt;在执行&lt;code&gt;hexo d&lt;/code&gt;命令时，有时会遇到报错，报错如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/hexo-d-err.png&#34;
-	width=&#34;1062&#34;
-	height=&#34;606&#34;
-	srcset=&#34;http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/hexo-d-err_hude9fea3f396330df5493082a88a9c905_112402_480x0_resize_box_3.png 480w, http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%975/hexo-d-err_hude9fea3f396330df5493082a88a9c905_112402_1024x0_resize_box_3.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;175&#34;
-		data-flex-basis=&#34;420px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;经过测试与尝试，网上找到的方法都无法解决问题，这只是网络问题。&lt;/p&gt;
-&lt;p&gt;我也不知道为什么，我把代理关了，就部署成功了。&lt;/p&gt;
-&lt;p&gt;若遇到类似的问题无需去修改什么配置，也不是git问题，只是网络问题，换个节点或是等待一段时间后或许就好了。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>随便写写，于期中考之后</title>
-        <link>http://blog.nothingalr8.top/post/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99%E4%BA%8E%E6%9C%9F%E4%B8%AD%E8%80%83%E4%B9%8B%E5%90%8E/</link>
-        <pubDate>Tue, 15 Nov 2022 19:15:48 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99%E4%BA%8E%E6%9C%9F%E4%B8%AD%E8%80%83%E4%B9%8B%E5%90%8E/</guid>
-        <description>&lt;p&gt;期中考结束了，我也开始顺应了大学的生活节奏，有很多想法。&lt;/p&gt;
-&lt;h1 id=&#34;大学生活&#34;&gt;大学生活&lt;/h1&gt;
-&lt;p&gt;首先聊聊我现在对大学生活的看法吧。&lt;/p&gt;
-&lt;p&gt;关于大学的生活，是我高中那时十分向往的。对于大学自由生活的渴望或许是我高三那年能坚持下来的原因之一，虽然有许多不尽人意，但都毕竟过去了，也没必要揪着不放了。&lt;/p&gt;
-&lt;p&gt;大学生活，是自由的，让我高兴。但大学生活，也没有那么自由，没有我想象的那般美好。&lt;/p&gt;
-&lt;p&gt;现在的我，一样被学业的重担压着，一样需要学习一堆我不喜欢的基础课程，甚至需要去应付一些所谓的水课，除此之外，我还要管理好我的生活，学会独立生活。&lt;/p&gt;
-&lt;p&gt;不知不觉中，我幻想的那种自由的大学生活似乎离我远去了。我发现生活中的琐事越来越多，我似乎变得越来越忙了。&lt;/p&gt;
-&lt;p&gt;大学学习也没有我想的那么自由。&lt;/p&gt;
-&lt;p&gt;一样要学习自己不喜欢的课程，一样要应付考试。&lt;/p&gt;
-&lt;p&gt;在大学中，我不想在乎分数，我不想在意绩点，更不想去理会奖学金，我想要活出自己的状态，去做自己真心想做的事，但我发现这好难啊。&lt;/p&gt;
-&lt;h1 id=&#34;迷茫&#34;&gt;迷茫&lt;/h1&gt;
-&lt;p&gt;我发现自己又迷茫了，就像我开始好奇世界为什么存在一样，像我疑惑我为了什么而活一样。&lt;/p&gt;
-&lt;p&gt;我前几次的迷茫都没有结果，我仍然不知道世界为什么存在，我还是不知道我为了什么而活。我想，这次对于未来的迷茫我一样不会思考出什么东西。我想，我也开始接受迷茫了，但是在迷茫时，心情一样较为低迷。&lt;/p&gt;
-&lt;p&gt;我为什么迷茫，我问我自己。我想，是觉得自己一事无成吧。&lt;/p&gt;
-&lt;p&gt;我希望把时间用在自主学习后端相关的知识上，但发现我好像什么都没学，对于一个项目，仍然一无所知。&lt;/p&gt;
-&lt;p&gt;我似乎花了很多时间在学习上，但我似乎什么都没学，都在浪费时间。&lt;/p&gt;
-&lt;p&gt;对于迷茫，我没有什么办法，只是接受它，并不希望去解决它，我想最后一样没有什么结果。慢慢来吧，时间一样会治好我的迷茫。&lt;/p&gt;
-&lt;h1 id=&#34;音乐&#34;&gt;音乐&lt;/h1&gt;
-&lt;p&gt;我在迷茫这段时间里，听了很多摇滚，我发现我越来越喜欢摇滚了。&lt;/p&gt;
-&lt;p&gt;我没有什么音乐的基础，但我迫切地希望自己能学一门乐器，或许摇滚相关的乐器是我最后的选择。&lt;/p&gt;
-&lt;p&gt;寒假，我希望我能开始。&lt;/p&gt;
-&lt;h1 id=&#34;关于博客&#34;&gt;关于博客&lt;/h1&gt;
-&lt;p&gt;我已经有半个月没有写博客了，一是为了准备期中考，但主要还是我有些迷茫了。&lt;/p&gt;
-&lt;p&gt;对于博客，我似乎有很多想上去的，但是每当开写之时，又会不知道写些什么，愣在电脑前。而就算开写了，我发现我缺失了表达自我的能力，很多内容无法表达出来，表达出来也索然无味。我有一次察觉到了我文笔之差，今后还要多阅读。&lt;/p&gt;
-&lt;p&gt;今天以后，我应该会重新继续写博客，每天都写，或多或少都要写点，哪怕只写一行。&lt;/p&gt;
-&lt;h1 id=&#34;最后&#34;&gt;最后&lt;/h1&gt;
-&lt;p&gt;最后，附上我下一阶段的学习以及博客的规划。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;继续学习Go语法，补全博客&lt;/li&gt;
-&lt;li&gt;学习go-zero服务，希望能参与到项目中去，并写一点博客&lt;/li&gt;
-&lt;li&gt;熟悉linux命令并写归纳的博客&lt;/li&gt;
-&lt;li&gt;学习vim的具体使用&lt;/li&gt;
-&lt;li&gt;学习MySQL&lt;/li&gt;
-&lt;/ol&gt;
-</description>
         </item>
         <item>
         <title>从零开始的Go(11)-函数</title>
@@ -2055,22 +1963,6 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>博客日志(4)-评论改动&amp;代码高亮</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%974-%E8%AF%84%E8%AE%BA%E6%94%B9%E5%8A%A8%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</link>
-        <pubDate>Sun, 16 Oct 2022 22:14:01 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%974-%E8%AF%84%E8%AE%BA%E6%94%B9%E5%8A%A8%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</guid>
-        <description>&lt;h1 id=&#34;评论改动&#34;&gt;评论改动&lt;/h1&gt;
-&lt;p&gt;对Valine存在一些不满意，我最终选择更换它，使用twikoo。&lt;/p&gt;
-&lt;p&gt;这个评论系统，确实十分方便好用，算是我用过的最好用的了。&lt;/p&gt;
-&lt;p&gt;可以根据QQ号来自动导入QQ邮箱、昵称与头像，有方便的邮箱提醒功能，可以便利地查看评论，算是比较满意了。&lt;/p&gt;
-&lt;h1 id=&#34;代码高亮显示&#34;&gt;代码高亮显示&lt;/h1&gt;
-&lt;p&gt;对于我博客的代码块，存在着高亮显示出错的问题，更换一个高亮主题后，已解决。&lt;/p&gt;
-&lt;h1 id=&#34;访问统计&#34;&gt;访问统计&lt;/h1&gt;
-&lt;p&gt;我还使用LeanCloud为博客添加了访问人数与访问次数的统计，并在博客的页脚显示这些内容。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>从零开始的Go(3)-基本数据类型</title>
         <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go3-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Sun, 16 Oct 2022 13:35:23 +0000</pubDate>
@@ -2428,29 +2320,6 @@
 </description>
         </item>
         <item>
-        <title>博客日志(3)-重建</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%973-%E9%87%8D%E5%BB%BA/</link>
-        <pubDate>Thu, 13 Oct 2022 19:23:36 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%973-%E9%87%8D%E5%BB%BA/</guid>
-        <description>&lt;h1 id=&#34;重建&#34;&gt;重建&lt;/h1&gt;
-&lt;p&gt;我的博客被我玩坏了,无法修复,而重建就是我最好的选择,或许一开始,我就预料到了这个结局,但实际操纵起来,确实还是挺难受的,不如好好备份,避免重建。&lt;/p&gt;
-&lt;p&gt;重建的过程没有什么曲折,相当顺利,速度也比我第一次快了不少,而用Hexo建立博客的过程也让我发出感叹——好简单啊!这是我第一次建站没有的感受。&lt;/p&gt;
-&lt;p&gt;前不久,我通过了杭电助手二面的任务——用gin框架写一个简易的登录系统,我在这个过程中了解了不少网站的知识,这让我由衷的体会到了Hexo以及GitHub Page的便利。&lt;/p&gt;
-&lt;p&gt;用Hexo建立博客可以没有一点网站知识,只是通过教程一步步走,也可以顺利把网站建立起来。不用学习任何系统知识,不用编一句程序,不需要多么出色的布局设计&amp;hellip;&amp;hellip;你所需要做的,只是安装node,npm以及hexo,并打几行指令。&lt;/p&gt;
-&lt;p&gt;而GitHub Page的便利,我是在部署网页到服务器上时体会到的。无需将配置文件转移到服务器,无需调试因为系统转移而产生的任何问题,无需重新安装环境,无需通过及其复杂以及耗时的网站备案(gtmd净网行动)。似乎国内也有类似GitHub Page一样的服务,但是好像也要备案了。&lt;/p&gt;
-&lt;h1 id=&#34;新主题&#34;&gt;新主题&lt;/h1&gt;
-&lt;p&gt;博客的重建也自然是迎来了新主题,我采用的是Fluid,主题比较简洁,也有暗色主题,比较符合我的审美。而主题也有较完善的使用指南,配置也非常方便。&lt;/p&gt;
-&lt;p&gt;主题的介绍我就不展开了,如果有兴趣,可以前往Fluid的&lt;a class=&#34;link&#34; href=&#34;https://github.com/fluid-dev/hexo-theme-fluid&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Github页面&lt;/a&gt;与&lt;a class=&#34;link&#34; href=&#34;https://hexo.fluid-dev.com/docs/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;用户手册&lt;/a&gt;。&lt;/p&gt;
-&lt;h1 id=&#34;新评论系统&#34;&gt;新评论系统&lt;/h1&gt;
-&lt;p&gt;评论,我原先使用的是Livere。也确实挺便利好用的,但是访问速度较慢,在暗色主题的适配上也会产生问题。所以,我一并把评论系统换了。&lt;/p&gt;
-&lt;p&gt;一开始,我是准备使用gitalk的,我的博客既然部署在GitHub Page上,就不用考虑gitalk的速度问题了。但是,在配置好gitalk后,gitalk评论始终加载不出来,我也尝试了多种方法去解决,最终也没有解决。&lt;/p&gt;
-&lt;p&gt;最后,我选择了valine,使用起来也较为简单,只是我对评论的头像不太满意,寻找的解决方法似乎也都不太行。后续我也许会使用其他评论。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>从零开始的Go(0)-前言</title>
         <link>http://blog.nothingalr8.top/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go0-%E5%89%8D%E8%A8%80/</link>
         <pubDate>Thu, 13 Oct 2022 13:35:23 +0000</pubDate>
@@ -2467,35 +2336,6 @@
 &lt;li&gt;[菜鸟教程](&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/go/go-tutorial.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Go 语言教程 | 菜鸟教程 (runoob.com)&lt;/a&gt;)&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>博客日志(2)-寄!博客没了</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%972-%E5%AF%84%E5%8D%9A%E5%AE%A2%E6%B2%A1%E4%BA%86/</link>
-        <pubDate>Wed, 12 Oct 2022 13:14:01 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%972-%E5%AF%84%E5%8D%9A%E5%AE%A2%E6%B2%A1%E4%BA%86/</guid>
-        <description>&lt;p&gt;如标题所言,我的博客寄了,所有文章都无法访问了。&lt;/p&gt;
-&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
-&lt;p&gt;虽说Next主题十分简洁,配置起来也比较简单,但在欣赏了众多大佬的博客之后,我发现我的博客似乎太过单调了,没有什么特色。而与此同时,我希望在自己的博客中使用暗色主题,但是先前配置的Livere评论无法适配暗色主题,导致评论字体是黑色的,与背景融为一体,十分不利于阅读。所以,我希望能够换一个主题,来使我的博客不一样,同时改进一些做的不太好的配置。&lt;/p&gt;
-&lt;h1 id=&#34;寄&#34;&gt;寄!&lt;/h1&gt;
-&lt;p&gt;在众多的Hexo主题中,我好不容易挑出来一款主题,殊不知接下来问题才刚刚开始。在更换主题之前,我考虑了备份,但我的想法是这样的:没关系,不用备份了,反正我的博客也没什么东西,大不了全没了,但我的markdown总不会丢吧,寄了就寄了。嗯,就这样,我最后只剩下markdown了。&lt;/p&gt;
-&lt;p&gt;在我更改了主题文件之后,其实一切都是没出现问题的,我也顺利的访问了网站,看到了焕然一新的界面,只是出现了少数的显示问题,也可以通过修改配置来解决。但是,直到我执行了&lt;code&gt;Hexo clean&lt;/code&gt;命令,并&lt;code&gt;Hexo g -d&lt;/code&gt;之后,问题出现了,我的网站也彻底寄了。&lt;/p&gt;
-&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;
-&lt;p&gt;我访问我的博客是,主页面并没有产生问题,但是所有的文章页面无法访问,点击会跳转到空白页。&lt;/p&gt;
-&lt;p&gt;一开始,我以为是网络不好,没有上传到github page成功,并多试了几次,但是结果一样。&lt;/p&gt;
-&lt;p&gt;这是我开始了本地部署,也产生了一样的问题。我检查了我的本地文件,发现所有生成的Html文件都是0kb,我的hexo生成器坏了,找到了问题的原因,我便开始着手解决。&lt;/p&gt;
-&lt;p&gt;我总共找到了4种方法,它们来自Github issue,csdn以及各种个人博客。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;降低node版本&lt;/li&gt;
-&lt;li&gt;检查hexo完整性&lt;/li&gt;
-&lt;li&gt;更换hexo版本&lt;/li&gt;
-&lt;li&gt;更换一个新的config文件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;方法我都试过了,但是问题依旧,而我也没有找到更多有用的方法了,我花了一个晚上,把我的博客搞坏了。&lt;/p&gt;
-&lt;h1 id=&#34;收获&#34;&gt;收获&lt;/h1&gt;
-&lt;p&gt;我的博客虽然崩了,但是要乐观点。想想我通过这个过程收获了什么。
-&lt;del&gt;首先最重要的,我收获了一个晚上的一无所成,还成功搞坏博客。&lt;/del&gt; 我从解决问题的过程中(虽然没解决),渐渐开始了解hexo的部分原理,它通过一个generator 把markdown生成成html文件,并部署。我也明白修改主题并不是一件难事,同时最重要的,修改配置之前,&lt;strong&gt;记得要备份!记得要备份!记得要备份!&lt;/strong&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2943,21 +2783,6 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;内嵌html标签&#34;&gt;内嵌html标签&lt;/h2&gt;
 &lt;p&gt;在Markdown中使用html语言,并不需要额外标注,可以直接使用。但在html中markdown不适用。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>博客日志(1)-网站建立</title>
-        <link>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</link>
-        <pubDate>Sun, 18 Sep 2022 13:14:02 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/post/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%971-%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B/</guid>
-        <description>&lt;h1 id=&#34;开始&#34;&gt;开始&lt;/h1&gt;
-&lt;p&gt;2022年9月18日,我其实已经有搭建博客这个想法很久了。而这一天,我在学长的建议下,正式开始了这一项工作。而对于一个没有一点web基础的新人来说,这并不是一件简单的事。我开始在网络上寻找搭建博客的方法,并一步步建立了博客。&lt;/p&gt;
-&lt;h1 id=&#34;建站过程&#34;&gt;建站过程&lt;/h1&gt;
-&lt;p&gt;其实建立博客比我预想的简单许多,Hexo提供了一个简易的建站模式,使个人博客的建立变得简单。我只是简单的跟着教程,安装node与npm,建立了hexo博客,并部署在GitHub Page上,使用Next主题,并用livere添加了评论,一切似乎都比较容易,我也对博客进行了一定的美化,而这只用了区区两天。到了9月19日晚上,我就已经完成了网站的建立,并发表了我的第一篇博客。&lt;/p&gt;
-&lt;p&gt;虽然我已经完成了博客的建立,但我还没有理解博客的运行原理,没有真正搞懂Hexo,而到我渐渐理解了,我想我会分享一篇使用Hexo建立个人博客的教程。&lt;/p&gt;
-&lt;h1 id=&#34;建站目的&#34;&gt;建站目的?&lt;/h1&gt;
-&lt;p&gt;我的博客已初步建立完成,我也开始思考我建站的目的。我到底想在博客上写什么。我到现在还没有太好的想法,只是简单的记录学习过程?等我确定之后,我会在博客的关于页写明。&lt;/p&gt;
 </description>
         </item>
         <item>

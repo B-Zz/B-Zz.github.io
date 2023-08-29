@@ -6,15 +6,7 @@
         <description>Recent content in Categories on NothingAlr8&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 03 Jun 2023 19:23:36 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>博客日志</title>
-        <link>http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</link>
-        <pubDate>Sat, 03 Jun 2023 19:23:36 +0000</pubDate>
-        
-        <guid>http://blog.nothingalr8.top/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</guid>
-        <description></description>
-        </item>
-        <item>
+        <lastBuildDate>Sun, 05 Mar 2023 09:36:12 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>从零开始的Go</title>
         <link>http://blog.nothingalr8.top/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84go/</link>
         <pubDate>Sun, 05 Mar 2023 09:36:12 +0000</pubDate>
@@ -33,7 +25,7 @@
         <item>
         <title>随笔</title>
         <link>http://blog.nothingalr8.top/categories/%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Tue, 15 Nov 2022 19:15:48 +0000</pubDate>
+        <pubDate>Sun, 30 Oct 2022 20:06:25 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/categories/%E9%9A%8F%E7%AC%94/</guid>
         <description>&lt;img src="http://blog.nothingalr8.top/categories/%E9%9A%8F%E7%AC%94/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 随笔" /&gt;</description>
