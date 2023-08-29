@@ -6,18 +6,19 @@
         <description>Recent content in Pages on NothingAlr8&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 04 Jun 2023 20:45:47 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 29 Aug 2023 20:45:47 +0000</lastBuildDate><atom:link href="http://blog.nothingalr8.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
         <link>http://blog.nothingalr8.top/about/</link>
-        <pubDate>Sun, 04 Jun 2023 20:45:47 +0000</pubDate>
+        <pubDate>Tue, 29 Aug 2023 20:45:47 +0000</pubDate>
         
         <guid>http://blog.nothingalr8.top/about/</guid>
         <description>&lt;h1 id=&#34;关于网站&#34;&gt;关于网站&lt;/h1&gt;
 &lt;h2 id=&#34;网站简介&#34;&gt;网站简介&lt;/h2&gt;
 &lt;p&gt;本站是NothingAlr8的个人博客，分享一些学习或是感兴趣的事物。&lt;/p&gt;
-&lt;p&gt;本站使用&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;本站现使用&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hugo&lt;/a&gt;框架，主题是&lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;stack&lt;/a&gt;，部署在Github Page上，未来可能会部署在云服务器上。&lt;/p&gt;
+    &gt;stack&lt;/a&gt;，部署在&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/zh/pages/getting-started-with-github-pages&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github Page&lt;/a&gt;上。&lt;/p&gt;
 &lt;h1 id=&#34;关于我&#34;&gt;关于我&lt;/h1&gt;
 &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;NothingAlr8，一个苦逼大学生，一条有时候会翻腾两下的臭咸鱼。&lt;/p&gt;
@@ -50,16 +51,20 @@
 &lt;h2 id=&#34;2022918-博客建立&#34;&gt;2022.9.18 博客建立&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;本站使用Hexo建立&lt;/p&gt;
+&lt;p&gt;本站使用&lt;a class=&#34;link&#34; href=&#34;https://hexo.io/zh-cn/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hexo&lt;/a&gt;建立&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;使用Next主题&lt;/p&gt;
+&lt;p&gt;使用&lt;a class=&#34;link&#34; href=&#34;https://theme-next.js.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Next&lt;/a&gt;主题&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;部署在Github Page上&lt;/p&gt;
+&lt;p&gt;部署在&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/zh/pages/getting-started-with-github-pages&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github Page&lt;/a&gt;上&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;添加livere评论&lt;/p&gt;
+&lt;p&gt;添加&lt;a class=&#34;link&#34; href=&#34;https://www.livere.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;livere&lt;/a&gt;评论&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;20221012-博客第一次崩溃&#34;&gt;2022.10.12 博客第一次崩溃&lt;/h2&gt;
@@ -67,21 +72,29 @@
 &lt;h2 id=&#34;20221013-博客第一次重建&#34;&gt;2022.10.13 博客第一次重建&lt;/h2&gt;
 &lt;p&gt;继第一次崩溃后重建博&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;转而使用Fluid主题&lt;/li&gt;
-&lt;li&gt;转用valine添加评论&lt;/li&gt;
+&lt;li&gt;转而使用&lt;a class=&#34;link&#34; href=&#34;https://fluid-dev.github.io/hexo-fluid-docs/start/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fluid&lt;/a&gt;主题&lt;/li&gt;
+&lt;li&gt;转用&lt;a class=&#34;link&#34; href=&#34;https://valine.js.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;valine&lt;/a&gt;添加评论&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;20221016-小改动&#34;&gt;2022.10.16 小改动&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;转用twikoo添加评论&lt;/li&gt;
+&lt;li&gt;转用&lt;a class=&#34;link&#34; href=&#34;https://twikoo.js.org/quick-start.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;twikoo&lt;/a&gt;添加评论&lt;/li&gt;
 &lt;li&gt;修复代码高亮的出错&lt;/li&gt;
-&lt;li&gt;使用LeanCloud添加简单的访问统计&lt;/li&gt;
+&lt;li&gt;使用&lt;a class=&#34;link&#34; href=&#34;https://www.leancloud.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeanCloud&lt;/a&gt;添加简单的访问统计&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;202363-博客重构&#34;&gt;2023.6.3 博客重构&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;使用Hugo框架重建&lt;/li&gt;
-&lt;li&gt;使用stack主题&lt;/li&gt;
-&lt;li&gt;继续部署在Github Page上&lt;/li&gt;
-&lt;li&gt;仍使用twikoo添加博客评论&lt;/li&gt;
+&lt;li&gt;使用&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo&lt;/a&gt;框架重建&lt;/li&gt;
+&lt;li&gt;使用&lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;stack&lt;/a&gt;主题&lt;/li&gt;
+&lt;li&gt;继续部署在&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/zh/pages/getting-started-with-github-pages&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github Page&lt;/a&gt;上&lt;/li&gt;
+&lt;li&gt;仍使用&lt;a class=&#34;link&#34; href=&#34;https://twikoo.js.org/quick-start.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;twikoo&lt;/a&gt;添加博客评论&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;2023828-目录改动&#34;&gt;2023.8.28 目录改动&lt;/h2&gt;
 &lt;ul&gt;
